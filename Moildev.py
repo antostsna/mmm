@@ -30,7 +30,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            for more detail, please reference https://github.com/perseverance-tech-tw/moildev
+            for more detail, please reference `https://github.com/perseverance-tech-tw/moildev`
         """
         super(Moildev, self).__init__()
         self.__alpha_to_rho_table = []
@@ -56,7 +56,7 @@ class Moildev(object):
         if file_camera_parameter is None:
             if kwarg == {}:
                 print("Pass the argument with camera parameter file with json extension (*.json),\n"
-                      "see detail documentation here https://github.com/perseverance-tech-tw/moildev")
+                      "see detail documentation here `https://github.com/perseverance-tech-tw/moildev`")
 
             else:
                 for key, value in kwarg.items():
@@ -110,7 +110,7 @@ class Moildev(object):
                         self.__parameter_4 is None or \
                         self.__parameter_5 is None:
                     warnings.warn("You're not passing the complete parameter. please refer to the documentation here "
-                                  "https://github.com/perseverance-tech-tw/moildev ")
+                                  "`https://github.com/perseverance-tech-tw/moildev` ")
 
                 else:
                     self.__init_alpha_rho_table()
@@ -176,7 +176,7 @@ class Moildev(object):
                 else:
                     warnings.warn("Please Check your parameter file. \n"
                                   "If inside the file has multiple camera parameter, typing the name of camera!!\n"
-                                  "see detail documentation here https://github.com/perseverance-tech-tw/moildev\n"
+                                  "see detail documentation here `https://github.com/perseverance-tech-tw/moildev`\n"
                                   "or you can email to 'perseverance.tech.tw@gmail.com'")
 
     def __init_alpha_rho_table(self):
@@ -395,7 +395,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         if beta < 0:
             beta = beta + 360
@@ -425,6 +425,10 @@ class Moildev(object):
         Returns:
             mapX: the mapping matrices X
             mapY: the mapping matrices Y
+
+        .. code-block :: markdown
+
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         if pitch < - 110 or pitch > 110 or yaw < -110 or yaw > 110 or roll < -110 or roll > 110:
             pitch = 0
@@ -458,7 +462,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         if alpha_min < 5:
             alpha_min = 5
@@ -484,7 +488,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         self.__moildev.PanoramaCar(self.__map_x, self.__map_y, alpha_max, iC_alpha_degree,
                                    iC_beta_degree, flip_h)
@@ -508,7 +512,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         self.__moildev.PanoramaM_Rt(self.__map_x, self.__map_y, alpha_max, iC_alpha_degree, iC_beta_degree)
         return self.__map_x, self.__map_y
@@ -524,6 +528,10 @@ class Moildev(object):
 
         Returns:
             maps_x_reverse, maps_y_reverse
+
+        .. code-block :: markdown
+
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         self.__moildev.revPanoramaMaps(self.__map_x, self.__map_y, alpha_max, beta_degree)
         return self.__map_x, self.__map_y
@@ -545,7 +553,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         map_x, map_y = self.maps_anypoint_mode1(alpha, beta, zoom)
         image = cv2.remap(image, map_x, map_y, cv2.INTER_CUBIC)
@@ -569,7 +577,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         map_x, map_y = self.maps_anypoint_mode2(pitch, yaw, roll, zoom)
         image = cv2.remap(image, map_x, map_y, cv2.INTER_CUBIC)
@@ -590,7 +598,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         map_x, map_y = self.maps_panorama_tube(alpha_min, alpha_max, flip_h)
         image = cv2.remap(image, map_x, map_y, cv2.INTER_CUBIC)
@@ -615,6 +623,10 @@ class Moildev(object):
 
         Returns:
             Panorama image
+
+        .. code-block :: markdown
+
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         map_x, map_y = self.maps_panorama_car(alpha_max, alpha, beta, flip_h)
         image = cv2.resize(cv2.remap(image, map_x, map_y, cv2.INTER_CUBIC),
@@ -638,6 +650,11 @@ class Moildev(object):
 
         Returns:
             reverse image
+
+        .. code-block :: markdown
+
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
+
         """
         self.__moildev.PanoramaM_Rt(self.__map_x, self.__map_y, alpha_max, iC_alpha_degree, iC_beta_degree)
         result = cv2.remap(image, self.__map_x, self.__map_y, cv2.INTER_CUBIC)
@@ -653,6 +670,7 @@ class Moildev(object):
 
         Returns:
             alpha
+
         """
         if rho >= 0:
             return self.__rho_to_alpha_table[rho] / 10
@@ -668,6 +686,7 @@ class Moildev(object):
 
         Returns:
             rho image
+
         """
         return self.__alpha_to_rho_table[round(alpha * 10)]
 
@@ -685,7 +704,7 @@ class Moildev(object):
 
         .. code-block :: markdown
 
-            please reference: https://github.com/perseverance-tech-tw/moildev
+            please reference: `https://github.com/perseverance-tech-tw/moildev`
         """
         delta_x = coordinateX - self.__icx
         delta_y = -(coordinateY - self.__icy)
