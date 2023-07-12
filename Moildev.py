@@ -2,8 +2,12 @@ import math
 import json
 import cv2
 import numpy as np
-from .dll import MoilCV
+import os
+import sys
 import warnings
+
+sys.path.append(os.path.dirname(__file__))
+from dll import MoilCV
 
 
 class Moildev(object):
