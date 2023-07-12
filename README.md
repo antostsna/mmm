@@ -1,7 +1,7 @@
 # Moildev Release-4.0
 Moildev Library is a collection of functions support python to developments fisheye image applications.
 
-============================================================================
+===
 
 ## 1. How to install
 There are two ways to use moildev. The first way is by visiting the moildev library, now available in the pypi 
