@@ -10,7 +10,8 @@ import os
 import sys
 from git import Repo
 
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath("../../"))
+
 
 project = 'moildev'
 copyright = '2023, Perseverance Technology'
@@ -25,6 +26,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    "sphinx.ext.napoleon",
+    "sphinx.ext.autosectionlabel"
 ]
 
 templates_path = ['_templates']
@@ -54,12 +57,14 @@ source_suffix = '.rst'
 master_doc = 'index'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-autodoc_mock_imports = ["Moildev"]
+autoclass_content = 'both'
+autodoc_mock_imports = ["Moildev", "cv2", "numpy", "warning"]
+html_show_sourcelink = False
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
-html_static_path = ['_static']
+# html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'MyProject'
@@ -76,6 +81,14 @@ latex_documents = [
 ]
 
 autodoc_default_flags = ['members', 'inherited-members']
+autodoc_member_order = 'bysource'
+autodoc_default_options = {
+    'undoc-members': True,
+    'show-inheritance': True}
+
+autosummary_generate = True
+
+add_module_names = False
 
 # -- Options for manual page output ------------------------------------------
 # One entry per manual page. List of tuples
@@ -161,6 +174,6 @@ html_context['downloads'].append(('epub',
 
 # for GitHub pages // need to change when use in another project
 html_context['display_github'] = True
-html_context['github_user'] = 'McutOIL'
-html_context['github_repo'] = 'project-documentation-template'
-html_context['github_version'] = 'main/docs/'
+html_context['github_user'] = 'perseverance-tech-tw'
+html_context['github_repo'] = 'moildev'
+html_context['github_version'] = f'{current_version}/docs/'
