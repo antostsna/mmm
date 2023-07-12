@@ -11,6 +11,7 @@ python3 -m pip install --upgrade rinohtype pygments
 git config --global --add safe.directory "*"
 
 pwd
+cd docs
 ls -lah
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 
@@ -21,7 +22,7 @@ export REPO_NAME="${GITHUB_REPOSITORY##*/}"
 
 # ***************************  Build Docs *************************
 # first, cleanup any old builds' static assets
-make -C docs clean
+make clean
 
 # get a list of branches, excluding 'HEAD' and 'gh-pages'
 versions="`git for-each-ref '--format=%(refname:lstrip=-1)' refs/remotes/origin/ | grep -viE '^(HEAD|gh-pages)$'`"
@@ -34,12 +35,12 @@ for current_version in ${versions}; do
    echo "INFO: Building sites for ${current_version}"
 
    # skip this branch if it doesn't have our docs dir & sphinx config
-   if [ ! -e 'docs/conf.py' ]; then
-      echo -e "\tINFO: Couldn't find 'docs/conf.py' (skipped)"
+   if [ ! -e 'conf.py' ]; then
+      echo -e "\tINFO: Couldn't find 'conf.py' (skipped)"
       continue
    fi
 
-   languages="en `find docs/locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
+   languages="en `find locales/ -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;`"
    for current_language in ${languages}; do
 
       # make the current language available to conf.py
@@ -48,20 +49,20 @@ for current_version in ${versions}; do
       echo "INFO: Building for ${current_language}"
 
       # HTML #
-      sphinx-build -b html docs/ docs/_build/html/${current_language}/${current_version} -D language="${current_language}"
+      sphinx-build -b html . _build/html/${current_language}/${current_version} -D language="${current_language}"
 
       # PDF #
-      sphinx-build -b rinoh docs/ docs/_build/rinoh -D language="${current_language}"
+      sphinx-build -b rinoh . _build/rinoh -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/moildev-docs_${current_language}_${current_version}.pdf"
+      cp "_build/rinoh/target.pdf" "${docroot}/${current_language}/${current_version}/moildev-docs_${current_language}_${current_version}.pdf"
 
       # EPUB #
-      sphinx-build -b epub docs/ docs/_build/epub -D language="${current_language}"
+      sphinx-build -b epub . _build/epub -D language="${current_language}"
       mkdir -p "${docroot}/${current_language}/${current_version}"
-      cp "docs/_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/moildev-docs_${current_language}_${current_version}.epub"
+      cp "_build/epub/target.epub" "${docroot}/${current_language}/${current_version}/moildev-docs_${current_language}_${current_version}.epub"
 
       # copy the static assets produced by the above build into our docroot
-      rsync -av "docs/_build/html/" "${docroot}/"
+      rsync -av "_build/html/" "${docroot}/"
 
    done
 
@@ -104,10 +105,10 @@ EOF
 cat > README.md <<EOF
 # GitHub Pages
 
-Nothing to see here. The contents of this branch are essentially a cache that's not intended to be viewed on github.com.
+Nothing to see here. The contents of this branch are essentially a cache that's not intended to be viewed.
 
 
-If you're looking to update our documentation, check the relevant development branch's 'docs/' dir.
+If you're looking to update our documentation, check the relevant version of developed branch.
 
 EOF
 
