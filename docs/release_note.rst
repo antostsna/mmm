@@ -10,7 +10,8 @@ fisheye image and more easy in utilization
 
 Release Highlight
 =================
-    - Panorama car and Panorama Tube can horizontally flip by passing the boolean parameter on this funtion
+    - Panorama car and Panorama Tube can horizontally flip by passing the boolean parameter on this function
+
 
 
 Copyright
