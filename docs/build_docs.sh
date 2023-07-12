@@ -10,8 +10,8 @@ python3 -m pip install --upgrade rinohtype pygments
 # prevent git "detected dubious ownership" errors
 git config --global --add safe.directory "*"
 
-pwd
 cd docs
+pwd
 ls -lah
 export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 

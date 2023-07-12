@@ -11,6 +11,7 @@ import sys
 from git import Repo
 
 sys.path.insert(0, os.path.abspath("../../"))
+print(os.path.abspath("../../"))
 
 project = 'moildev'
 copyright = '2023, Perseverance Technology'

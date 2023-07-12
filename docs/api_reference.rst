@@ -3,5 +3,5 @@
 API Reference
 ##############
 
-.. automodule:: moildev.Moildev
+.. automodule:: mmm.Moildev
    :members:
