@@ -16,11 +16,3 @@ Welcome to moildev's documentation!
    sample_application
    api_reference
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
