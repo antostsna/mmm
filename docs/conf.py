@@ -58,7 +58,8 @@ master_doc = 'index'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 autoclass_content = 'both'
-autodoc_mock_imports = ["Moildev", "cv2", "numpy", "warning"]
+autodoc_mock_imports = ["Moildev", "cv2", "numpy", "warning", 'dll']
+
 html_show_sourcelink = False
 
 # The name of the Pygments (syntax highlighting) style to use.
