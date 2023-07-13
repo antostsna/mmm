@@ -71,10 +71,12 @@ pygments_style = None
 htmlhelp_basename = 'MyProject'
 
 # -- Options for LaTeX output ------------------------------------------------
+latex_engine = 'pdflatex'
+
 latex_elements = {
     'papersize': 'a4paper',
     'extraclassoptions': 'openany,oneside',
-    'preamble': r'''
+    'maketitle': r'''
                 \documentclass[a4paper]{article}
                 \usepackage[top=7cm, bottom=8cm, left=2cm, right=2cm]{geometry}
                 \usepackage{ragged2e}
@@ -102,6 +104,9 @@ latex_elements = {
                 \end{document}
     '''
 }
+
+
+latex_logo = 'assets/logo.jpg'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
