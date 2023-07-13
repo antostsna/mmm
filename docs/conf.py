@@ -13,10 +13,10 @@ from git import Repo
 sys.path.insert(0, os.path.abspath("../../"))
 print(os.path.abspath("../../"))
 
-project = 'moildev'
+project = 'Moildev'
 copyright = '2023, Perseverance Technology'
 author = 'Perseverance Technology'
-release = '2023'
+release = '4.1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -71,13 +71,43 @@ pygments_style = None
 htmlhelp_basename = 'MyProject'
 
 # -- Options for LaTeX output ------------------------------------------------
-latex_elements = {}
+latex_elements = {
+    'papersize': 'a4paper',
+    'extraclassoptions': 'openany,oneside',
+    'preamble': r'''
+                \documentclass[a4paper]{article}
+                \usepackage[top=7cm, bottom=8cm, left=2cm, right=2cm]{geometry}
+                \usepackage{ragged2e}
+                \usepackage{graphicx}
+                
+                \begin{document}
+                
+                \begin{titlepage}
+                    \begin{FlushRight}
+                        \RaggedLeft
+                        \includegraphics[width=0.6\textwidth]{assets/logo.png}\par\vspace{1cm}
+                        {\Huge \textbf{Moildev Documentation}\par}
+                        \vspace{0.1cm}
+                        {\LARGE \textit{Release 4.1.0}\par}
+                        \vspace{1.5cm}
+                        {\Large \textbf{© 2023, Perseverance Technology}\par}
+                        \vspace{0.5cm}
+                        \vfill
+                        {\Large \textbf{July 12, 2023}\par}
+                        \vspace{0.2cm}
+                        {\large \textbf{Writer: Haryanto}\par}
+                    \end{FlushRight}
+                \end{titlepage}
+                
+                \end{document}
+    '''
+}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'MyProject.tex', 'MyProject Documentation',
+    (master_doc, 'Moildev.tex', 'Moildev Documentation',
      'Haryanto', 'manual'),
 ]
 
@@ -95,7 +125,7 @@ add_module_names = False
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'MyProject', 'MyProject Documentation',
+    (master_doc, 'Moildev', 'Moildev Documentation',
      [author], 1)
 ]
 
