@@ -7,8 +7,7 @@ API Reference
 Moildev Module
 ==============
 
-.. automodule:: moildev.Moildev
-   :members:
+Coming soon
 
 
 Testing code

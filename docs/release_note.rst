@@ -1,18 +1,16 @@
 Release Note
 ############
 
-Moildev-4.1.0
+Moildev-v1.x.x
 ==============
-Moildev-4.1.0 is continued development of moildev SDK.
-Its has a new updated for make it better result in processing
+Moildev-1.0.0 is the first development of moildev SDK.
+Its has a features for make it better result in processing
 fisheye image and more easy in utilization
 
 
 Release Highlight
 =================
-    - Panorama car and Panorama Tube can horizontally flip by passing the boolean parameter on this function
-
-
+    - comming soon
 
 Copyright
 =========
