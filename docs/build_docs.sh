@@ -93,10 +93,10 @@ cat > index.html <<EOF
 <html>
    <head>
       <title>Moilapp Docs</title>
-      <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/main/'" />
+      <meta http-equiv = "refresh" content="0; url='/${REPO_NAME}/en/${current_version}/'" />
    </head>
    <body>
-      <p>Please wait while you're redirected to our <a href="/${REPO_NAME}/en/main/">documentation</a>.</p>
+      <p>Please be patient while we redirect you to our <a href="/${REPO_NAME}/en/${current_version}/">documentation</a>.</p>
    </body>
 </html>
 EOF
