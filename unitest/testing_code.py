@@ -1,3 +1,14 @@
+"""
+
+This is the testing code of moildev, for a green hand people will very easy to get
+the idea about what the moildev do during the processing.
+
+last modified: 13/07/2023
+writer: Haryanto
+contact: perseverance@gmail.com
+
+"""
+
 import os
 import sys
 
@@ -10,7 +21,7 @@ import cv2
 #  Specify the size of window show image
 w, h = 400, 300
 
-# original image as input
+
 image = cv2.imread("image_virtual.png")
 image = cv2.circle(image, (1295, 1844), 25, (0, 255, 0), 25)
 image_experiment = cv2.imread("image_experiment.png")
@@ -49,17 +60,17 @@ cv2.imshow("anypoint mode 2 experiment", anypoint_m2_exp)
 
 # panorama tube
 panorama_tube = moildev_virtual.panorama_tube(image, 10, 110)
-panorama_tube = cv2.resize(panorama_tube, (round(panorama_tube.shape[1]/4), round(panorama_tube.shape[0]/4)))
+panorama_tube = cv2.resize(panorama_tube, (round(panorama_tube.shape[1] / 4), round(panorama_tube.shape[0] / 4)))
 cv2.imshow("panorama tube virtual image", panorama_tube)
 
 # panorama tube
 panorama_tube = moildev.panorama_tube(image_experiment, 10, 110)
-panorama_tube = cv2.resize(panorama_tube, (round(panorama_tube.shape[1]/4), round(panorama_tube.shape[0]/4)))
+panorama_tube = cv2.resize(panorama_tube, (round(panorama_tube.shape[1] / 4), round(panorama_tube.shape[0] / 4)))
 cv2.imshow("panorama tube", panorama_tube)
 
 # test panorama car
 panorama_car = moildev_virtual.panorama_car(image, 180, 90, 0, 0, 1, 0, 1)
-panorama_car = cv2.resize(panorama_car, (round(panorama_car.shape[1]/6), round(panorama_car.shape[0]/6)))
+panorama_car = cv2.resize(panorama_car, (round(panorama_car.shape[1] / 6), round(panorama_car.shape[0] / 6)))
 cv2.imshow("panorama car", panorama_car)
 
 recenter = moildev.recenter(image, 110, -90, 0)
