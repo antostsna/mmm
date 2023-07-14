@@ -7,7 +7,7 @@ API Reference
 Moildev Module
 ==============
 
-.. automodule:: moildev.Moildev
+.. automodule:: mmm.Moildev
    :members:
 
 
