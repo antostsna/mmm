@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MyProject main\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-05 14:29+0800\n"
+"POT-Creation-Date: 2023-07-14 10:54+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: id\n"
@@ -24,22 +24,19 @@ msgid "Contents:"
 msgstr "Daftar isi:"
 
 #: ../../index.rst:7
-msgid "Welcome to MyProject's documentation!"
+#, fuzzy
+msgid "Welcome to moildev's documentation!"
 msgstr "Selamat datang di dokumentasi MyProject!"
 
-#: ../../index.rst:18
-msgid "Indices and tables"
-msgstr ""
+#~ msgid "Indices and tables"
+#~ msgstr ""
 
-#: ../../index.rst:20
-msgid ":ref:`genindex`"
-msgstr ""
+#~ msgid ":ref:`genindex`"
+#~ msgstr ""
 
-#: ../../index.rst:21
-msgid ":ref:`modindex`"
-msgstr ""
+#~ msgid ":ref:`modindex`"
+#~ msgstr ""
 
-#: ../../index.rst:22
-msgid ":ref:`search`"
-msgstr ""
+#~ msgid ":ref:`search`"
+#~ msgstr ""
 
