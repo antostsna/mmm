@@ -79,7 +79,7 @@ latex_elements = {
 }
 
 
-latex_logo = 'assets/logo.jpg'
+latex_logo = 'assets/logo.png'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
